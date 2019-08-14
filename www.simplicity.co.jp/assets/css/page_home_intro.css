@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+.paging-cover {
+	visibility: visible;
+}
+
+
+.home-opening .paging-cover {
+	visibility: hidden;
+}
+
+.indicator {
+	display: none;
+}
+
+.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	left: 0;
+	top: auto;
+	width: 100%;
+	height: 100%;
+	z-index: 190;
+	padding-top: 0;
+	color: #000;
+	background-color: rgba(255,255,255,1);
+	transition-property: transform, background;
+	transition-timing-function: cubic-bezier(0.8, 0, 0.2, 1), ease-out;
+	transition-duration: 3s, 3s;
+	transition-delay: 1s, 0s;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.intro-inner {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 200px);
+	max-height: 340px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.intro-mark {
+	align-self: center;
+	width: 70px;
+	height: 70px;
+}
+
+.intro-mark img {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+
+.intro-cat {
+	display: flex;
+	min-width: 320px;
+	height: auto;
+	margin: 0 auto;
+	padding: 30px 0;
+	list-style: none;
+}
+
+.intro-cat-list {
+	display: flex;
+	line-height: 1.5rem;
+	font-size: 1.5rem;
+	margin: auto;
+	list-style: none;
+	justify-content: space-between;
+}
+
+.intro-cat li {
+	writing-mode: vertical-rl;
+	display: block;
+	width: 1em;
+	margin: 1em;
+}
+
+.intro-cat-inner {
+	display: block;
+	backface-visibility: visible;
+}
+
+
+
+.intro-txt-container {
+	text-align: center;
+}
+
+.intro-txt-container .intro-txt {
+	margin: 0;
+	padding: 0 40px;
+	box-sizing: border-box;
+	line-height: 2.5;
+	font-size: 1.3rem;
+}
+
+
+
+.intro-sitename-container {
+	text-align: center;
+
+}
+
+.intro-sitename-container .intro-sitename {
+	font-size: 1.4rem;
+}
+
+
+.intro-mark {
+	opacity: 1;
+}
+.intro-cat li {
+	opacity: 0;
+	transition: opacity 2.0s cubic-bezier(.55,.06,.68,.19) 1.5s;
+}
+.intro-sitename-container {
+	opacity: 0;
+	transition: opacity 2.0s cubic-bezier(.55,.06,.68,.19) 4.0s;
+}
+
+.home-opening .intro-mark {
+	opacity: 0.4;
+}
+.home-opening .intro-cat li {
+	opacity: 0.7;
+}
+.home-opening .intro-sitename-container {
+	opacity: 0.7;
+}
+
+/* --------------------------------------------- */
+
+.subheader {
+	opacity: 0;
+	transition: 1.0s cubic-bezier(.55,.06,.68,.19) 2.5s;
+}
+
+.gnav .menu {
+	opacity: 0.1;
+	transition: 1.0s cubic-bezier(.55,.06,.68,.19) 2.5s;
+}
+
+/*
+ * 1. Opnening .opening
+ * 2. Opnening End
+ * 3. End
+ * 4. Showed intro
+ */
+
+/* 1. Opnening (.home-introEnd) ---------------------------------------- */
+
+.home-introEnd .subheader,
+.home-introEnd .gnav .menu {
+	opacity: 1;
+}
+
+
+/* 2. Opnening End (.home-openingEnd) ---------------------------------- */
+
+.home-openingEnd .intro {
+	display: none;
+}
+
+
+/* 3. End (.home-introEnd) --------------------------------------------- */
+
+.home-introEnd .intro {
+	transform: translateY(100vh);
+	background-color: rgba(255,255,255,0.85);
+}
+
+.home-introEnd .intro-txt {
+	
+}
+
+.home-introEnd .intro .scroll-navigate {
+	height: 0;
+	transition: 0.5s cubic-bezier(.55,.06,.68,.19) 0.5s;
+}
+
+
+/* 4. Showed intro (.showed-intro) --------------------------------------------- */
+
+.showed-intro .intro-inner {
+	display: none;
+}
+
+
+@media screen and (min-width: 414px) {
+	
+}
+
+@media screen and (min-width: 541px) {
+	
+}
+
+@media screen and (min-width: 1024px) {
+	
+	.scroll-navigate.-down {
+		/*right: 60px;*/
+	}
+	
+	.body-link {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+	.body-link img {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+	
+	.abs-elm {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		margin: auto;
+	}
+	
+	.intro-inner {
+		display: block;
+		height: calc(80vh - 200px);
+		max-height: 700px;
+	}
+	
+	.intro-mark {
+		top: calc(-50% - 150px);
+		width: 90px;
+		height: 90px;
+	}
+	
+	.intro-cat {
+		top: 80px;
+		left: 50%;
+		right: 50%;
+		bottom: 0;
+		width: auto;
+		height: 100px;
+		padding: 0;
+		transform: translateX(calc(-100% - 60px));
+	}
+	
+	.intro-cat-list {
+		width: 600px;
+		font-size: 2.5rem;
+		transform: translate(-30%, -50%);
+	}
+	
+	.intro-sitename-container {
+		top: auto;
+		bottom: 5%;
+		width: 80%;
+		height: 3em;
+		max-width: 1000px;
+		text-align: right;
+	}
+	
+	.intro-sitename-container .intro-sitename {
+		font-size: 1.6rem;
+	}
+	
+	.msie .intro-cat {
+		left: 0;
+	}
+}
